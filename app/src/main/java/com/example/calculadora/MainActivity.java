@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+
 public class MainActivity extends AppCompatActivity {
 
-    TextView resultado;
-    int numero1 = 0;
-    int numero2 = 0;
-    String operador="";
+    protected TextView resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             resultado.setText("8");
         }
         else {
-            resultado.setText(resultado.getText()+"5");
+            resultado.setText(resultado.getText()+"8");
         }
     }
     public void Escribir9(View view) {
@@ -113,8 +113,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void Clear(View view) {
         resultado.setText("0");
-        numero1=0;
-        numero2=0;
-        operador="";
+    }
+
+    public void Resultado(View view) {
+        if (!resultado.getText().toString().startsWith("+") && !resultado.getText().toString().contains("++")){
+            LinkedList<String> numeros = new LinkedList<>(Arrays.asList(resultado.getText().toString().split("\\+")));
+            int num, total = 0;
+            try {
+                for (String n : numeros) {
+                    num = Integer.parseInt(n);
+                    total = total + num;
+                }
+                resultado.setText((String.valueOf(total)));
+            }
+            catch (Exception e){
+                resultado.setText("-1");
+                e.printStackTrace();
+            }
+        }
+        else resultado.setText("-1");
     }
 }
