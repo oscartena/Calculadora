@@ -110,8 +110,5 @@ public class MainActivity extends AppCompatActivity {
 
     public void Clear(View view) {
         resultado.setText("0");
-        numero1=0;
-        numero2=0;
-        operador="";
     }
 }
