@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.Arrays;
-import java.util.LinkedList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -108,29 +107,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void EscribirSuma(View view) {
-        resultado.setText(resultado.getText()+"+");
+        if(resultado.getText().toString().equals("0")){
+            resultado.setText("+");
+        }
+        else {
+            resultado.setText(resultado.getText()+"+");
+        }
+    }
+    public void EscribirResta(View view){
+        if(resultado.getText().toString().equals("0")){
+            resultado.setText("-");
+        }
+        else {
+            resultado.setText(resultado.getText()+"-");
+        }
+    }
+    public void EscribirMultiplicacion(View view){
+        if(resultado.getText().toString().equals("0")){
+            resultado.setText("*");
+        }
+        else {
+            resultado.setText(resultado.getText()+"*");
+        }
     }
 
     public void Clear(View view) {
         resultado.setText("0");
     }
 
+
     public void Resultado(View view) {
-        if (!resultado.getText().toString().startsWith("+") && !resultado.getText().toString().contains("++")){
-            LinkedList<String> numeros = new LinkedList<>(Arrays.asList(resultado.getText().toString().split("\\+")));
-            int num, total = 0;
-            try {
-                for (String n : numeros) {
-                    num = Integer.parseInt(n);
-                    total = total + num;
-                }
-                resultado.setText((String.valueOf(total)));
-            }
-            catch (Exception e){
-                resultado.setText("-1");
-                e.printStackTrace();
-            }
-        }
-        else resultado.setText("-1");
+        resultado.setText(Calculator.calculate(resultado.getText().toString()));
     }
 }

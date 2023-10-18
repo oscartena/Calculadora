@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideVertical1"
         android:layout_width="wrap_content"
-        android:layout_height="wra100p_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.26"
         />
@@ -56,6 +56,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.26"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideHorizontal1.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38"
         />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideHorizontal2"
@@ -287,12 +294,44 @@
         android:onClick="EscribirSuma"
         android:text="+"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideHorizontal1.5"
+        app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
+        app:layout_constraintStart_toStartOf="@+id/guideVertical3"
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontal1" />
+
+    <Button
+        android:id="@+id/buttonResta"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FF0000"
+        android:onClick="EscribirResta"
+        android:text="-"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideHorizontal2.5"
         app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
         app:layout_constraintStart_toStartOf="@+id/guideVertical3"
-        app:layout_constraintTop_toTopOf="@+id/guideHorizontal1" />
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontal1.5" />
+
+    <Button
+        android:id="@+id/buttonMultiplicar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FF0000"
+        android:onClick="EscribirMultiplicacion"
+        android:text="*"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideHorizontal3"
+        app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
+        app:layout_constraintStart_toStartOf="@+id/guideVertical3"
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontal2.5" />
 
     <Button
         android:id="@+id/buttonIgual"
@@ -303,12 +342,12 @@
         android:onClick="Resultado"
         android:text="="
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideHorizontal3.5"
         app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
         app:layout_constraintStart_toStartOf="@+id/guideVertical3"
-        app:layout_constraintTop_toTopOf="@+id/guideHorizontal2.5" />
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontal3" />
 
     <Button
         android:id="@+id/buttonClear"
@@ -319,7 +358,7 @@
         android:onClick="Clear"
         android:text="C"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideHorizontalBottom"
         app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
