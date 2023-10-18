@@ -9,9 +9,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView resultado;
-    int numero1 = 0;
-    int numero2 = 0;
-    String operador="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,13 +105,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void EscribirSuma(View view) {
-        resultado.setText(resultado.getText()+"+");
+        if(resultado.getText().toString().equals("0")){
+            resultado.setText("+");
+        }
+        else {
+            resultado.setText(resultado.getText() + "+");
+        }
     }
+
+    public void EscribirResta(View view) {
+        if(resultado.getText().toString().equals("0")){
+            resultado.setText("-");
+        }
+        else {
+            resultado.setText(resultado.getText() + "-");
+        }    }
+
+    public void EscribirMultiplicacion(View view) {
+        if(resultado.getText().toString().equals("0")){
+            resultado.setText("*");
+        }
+        else {
+            resultado.setText(resultado.getText() + "*");
+        }    }
 
     public void Clear(View view) {
         resultado.setText("0");
-        numero1=0;
-        numero2=0;
-        operador="";
+    }
+
+    public void Calcular(View view) {
+        resultado.setText(Calculator.calculate(resultado.getText().toString()));
     }
 }

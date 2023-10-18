@@ -57,6 +57,13 @@
         app:layout_constraintGuide_percent="0.26"
         />
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideHorizontal1.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38"
+        />
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideHorizontal2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -253,10 +260,36 @@
         android:text="+"
         android:onClick="EscribirSuma"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideHorizontal2.5"
+        app:layout_constraintBottom_toTopOf="@+id/guideHorizontal1.5"
         app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
         app:layout_constraintStart_toStartOf="@+id/guideVertical3"
         app:layout_constraintTop_toTopOf="@+id/guideHorizontal1" />
+
+    <Button
+        android:id="@+id/buttonResta"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:text="-"
+        android:onClick="EscribirResta"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideHorizontal2.5"
+        app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
+        app:layout_constraintStart_toStartOf="@+id/guideVertical3"
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontal1.5" />
+
+    <Button
+        android:id="@+id/buttonMultiplicar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:text="*"
+        android:onClick="EscribirMultiplicacion"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideHorizontal3"
+        app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
+        app:layout_constraintStart_toStartOf="@+id/guideVertical3"
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontal2.5" />
 
     <Button
         android:id="@+id/buttonIgual"
@@ -264,11 +297,12 @@
         android:layout_height="0dp"
         android:layout_margin="5dp"
         android:text="="
+        android:onClick="Calcular"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideHorizontal3.5"
         app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
         app:layout_constraintStart_toStartOf="@+id/guideVertical3"
-        app:layout_constraintTop_toTopOf="@+id/guideHorizontal2.5" />
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontal3" />
 
     <Button
         android:id="@+id/buttonClear"
@@ -282,5 +316,8 @@
         app:layout_constraintEnd_toStartOf="@+id/guideVerticalEnd"
         app:layout_constraintStart_toStartOf="@+id/guideVertical3"
         app:layout_constraintTop_toTopOf="@+id/guideHorizontal3.5" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
