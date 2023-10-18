@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView resultado;
+    protected TextView resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,35 +105,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void EscribirSuma(View view) {
-        if(resultado.getText().toString().equals("0")){
-            resultado.setText("+");
-        }
-        else {
-            resultado.setText(resultado.getText() + "+");
-        }
+        resultado.setText(resultado.getText()+"+");
     }
-
-    public void EscribirResta(View view) {
-        if(resultado.getText().toString().equals("0")){
-            resultado.setText("-");
-        }
-        else {
-            resultado.setText(resultado.getText() + "-");
-        }    }
-
-    public void EscribirMultiplicacion(View view) {
-        if(resultado.getText().toString().equals("0")){
-            resultado.setText("*");
-        }
-        else {
-            resultado.setText(resultado.getText() + "*");
-        }    }
 
     public void Clear(View view) {
         resultado.setText("0");
-    }
-
-    public void Calcular(View view) {
-        resultado.setText(Calculator.calculate(resultado.getText().toString()));
+        numero1=0;
+        numero2=0;
+        operador="";
     }
 }
